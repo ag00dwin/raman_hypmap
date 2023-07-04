@@ -39,7 +39,6 @@ output
                 - row 0; column names 
             _spectra.png, an image of the hyperspectral map at the state when enter is pressed
 
-            this is test commit
 '''
 
 def interactive_map(_df_filter,_df_spectra,file):
