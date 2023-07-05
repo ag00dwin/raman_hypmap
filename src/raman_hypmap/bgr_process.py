@@ -1,45 +1,45 @@
-'''
-MODULE: BACKGROUND REDUCTION (BGR)
+def bgr_process(_df,location):
 
-iterative polynomial smoothing method
-As described: Wang, T. and Dai, L. Background Subtraction of Raman
-Spectra Based on Iterative Polynomial Smoothing. Applied Spectroscopy
-2016;71:1169-1179, doi: 10.1177/0003702816670915
+    '''
+    MODULE: BACKGROUND REDUCTION (BGR)
 
-current settings [can be updated within ''filter step'']
------
-    iteration_accuracy  = 10**-2     # itteration accuracy  
-    window_width        = 151               # filter window width 
-    polynomial_order    = 2                 # polynomial order 
+    iterative polynomial smoothing method
+    As described: Wang, T. and Dai, L. Background Subtraction of Raman
+    Spectra Based on Iterative Polynomial Smoothing. Applied Spectroscopy
+    2016;71:1169-1179, doi: 10.1177/0003702816670915
 
-prerequisites
------
-    numpy
-    scipy.signal
-    sys
+    current settings [can be updated within ''filter step'']
+    -----
+        iteration_accuracy  = 10**-2     # itteration accuracy  
+        window_width        = 151               # filter window width 
+        polynomial_order    = 2                 # polynomial order 
 
-input
------
-''_df'' is dataframe organised with:
-    - columns 0 and 1 holding x and y information
-    - columns 2: holding the spectral information 
-    - row 0 holding the raman shift values for each spectra sample point
-''location'' is the folder to export the generated csv files
+    prerequisites
+    -----
+        numpy
+        scipy.signal
+        sys
 
-output
------
-    the 'bgr' function will automatically save two .csv files to the given location: 
-        _bgr.csv; a file in the same format with each spectra background reduced
-        _bg.csv; a file in the same format with the background subtracted from each spectra
-    the function will also return a pandas dataframe identicle to the _bgr.csv 
+    input
+    -----
+    ''_df'' is dataframe organised with:
+        - columns 0 and 1 holding x and y information
+        - columns 2: holding the spectral information 
+        - row 0 holding the raman shift values for each spectra sample point
+    ''location'' is the folder to export the generated csv files
 
-progress bar is thanks to user: https://stackoverflow.com/users/320726/6502
-full details: https://stackoverflow.com/questions/6169217/replace-console-output-in-python
+    output
+    -----
+        the 'bgr' function will automatically save two .csv files to the given location: 
+            _bgr.csv; a file in the same format with each spectra background reduced
+            _bg.csv; a file in the same format with the background subtracted from each spectra
+        the function will also return a pandas dataframe identicle to the _bgr.csv 
 
-'''
+    progress bar is thanks to user: https://stackoverflow.com/users/320726/6502
+    full details: https://stackoverflow.com/questions/6169217/replace-console-output-in-python
 
-def bgr(_df,location):
-
+    '''
+    
     import numpy as np
     import pandas as pd
     import scipy.signal as sig

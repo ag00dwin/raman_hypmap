@@ -1,0 +1,8 @@
+phase,char_min,char_max,comp_min,comp_max,i_min,i_max
+graphite,1510,1620,0,0,0,2000
+apatite,950,975,0,0,0,2000
+feldspar,490,550,0,0,0,2000
+pyroxene,950,1170,0,0,0,2000
+hematite,1300,1340,1550,1600,0,2000
+magnetite,665,675,990,1010,0,2000
+ilmenite,675,685,990,1010,0,2000

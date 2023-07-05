@@ -1,57 +1,57 @@
-'''
-MODULE: FILTER WINDOW
+def filter_window(_df,location,window_location):
 
-compares spectra to r-shift ranges ('windows') to derive maximum intensity values
-to plot as intensities on hypspectral maps
+    '''
+    MODULE: FILTER WINDOW
 
-prerequisites
------
-    sys
-    os
-    numpy
-    pandas
-    seaborn
-    matplotlib.pyplot
-    scipy.signal
+    compares spectra to r-shift ranges ('windows') to derive maximum intensity values
+    to plot as intensities on hypspectral maps
 
-input
------
-''_df'' is dataframe organised with:
-    - columns 0 and 1 holding x and y information
-    - columns 2: holding the spectral information 
-    - row 0 holding the raman shift values for each spectra sample point
-''location'' is the folder to export the generated csv file and images
+    prerequisites
+    -----
+        sys
+        os
+        numpy
+        pandas
+        seaborn
+        matplotlib.pyplot
+        scipy.signal
 
-ALSO a prexisting file in the same directory ending with '_window_ranges.csv'
-    - column 0: phase   ; str name of window
-    - column 1: char_min; minimum r-shift value, window open
-    - column 2: char_max; maximum r-shift value, window closed
-    - column 3: comp_min; minimum r-shift value, window open    [to compare spectral intensities]
-    - column 4: comp_max; maximum r-shift value, window closed  [to compare spectral intensities]
-    - column 5: i_min   ; minimum intensity of maximum spectral intensity value in window
-    - column 6: i_max   ; minimum intensity of maximum spectral intensity value in window
+    input
+    -----
+    ''_df'' is dataframe organised with:
+        - columns 0 and 1 holding x and y information
+        - columns 2: holding the spectral information 
+        - row 0 holding the raman shift values for each spectra sample point
+    ''location'' is the folder to export the generated csv file and images
 
-comp_min & comp_max define the open and close values of a second window. The maximum intensity of the spectra
-in the char_min & char_max filter window must be larger than the maximum intensity in the 'comp# comparison 
-window to qualify. This allows for better filtering of more complex spectrum
+    ALSO a prexisting file in the same directory ending with '_window_ranges.csv'
+        - column 0: phase   ; str name of window
+        - column 1: char_min; minimum r-shift value, window open
+        - column 2: char_max; maximum r-shift value, window closed
+        - column 3: comp_min; minimum r-shift value, window open    [to compare spectral intensities]
+        - column 4: comp_max; maximum r-shift value, window closed  [to compare spectral intensities]
+        - column 5: i_min   ; minimum intensity of maximum spectral intensity value in window
+        - column 6: i_max   ; minimum intensity of maximum spectral intensity value in window
 
-output
------
-    the 'w_filter' function will automatically save one .csv file to the given location:
-        _w_filter.csv; a file organised with:
-            - row 0 holding the names for each window taken from _df
-            - column 0 and 1 holding x and y information
-            - column 2-n holding the intensity values for each phase
-    the 'w_filter' function will also automatically save a .png and .pdf file of the hypspectral map 
-    to the given location.
+    comp_min & comp_max define the open and close values of a second window. The maximum intensity of the spectra
+    in the char_min & char_max filter window must be larger than the maximum intensity in the 'comp# comparison 
+    window to qualify. This allows for better filtering of more complex spectrum
 
-progress bar is thanks to user: https://stackoverflow.com/users/320726/6502
-full details: https://stackoverflow.com/questions/6169217/replace-console-output-in-python
+    output
+    -----
+        the 'w_filter' function will automatically save one .csv file to the given location:
+            _w_filter.csv; a file organised with:
+                - row 0 holding the names for each window taken from _df
+                - column 0 and 1 holding x and y information
+                - column 2-n holding the intensity values for each phase
+        the 'w_filter' function will also automatically save a .png and .pdf file of the hypspectral map 
+        to the given location.
 
-'''
+    progress bar is thanks to user: https://stackoverflow.com/users/320726/6502
+    full details: https://stackoverflow.com/questions/6169217/replace-console-output-in-python
 
-def w_filter(_df,location,window_location):
-
+    '''
+    
     import sys
     import os
     import numpy as np

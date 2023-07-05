@@ -1,47 +1,47 @@
-'''
-MODULE: INTERACTIVE MAP 
+def hypmap_plot(_df_filter,_df_spectra,file):
 
-creates maps where masks can be drawn to average and save spectra from the supplied dataframe
-maps are created from previously filtered spectra windows
+    '''
+    MODULE: INTERACTIVE MAP 
 
-prerequisites
------
-    numpy
-    pandas
-    seaborn
+    creates maps where masks can be drawn to average and save spectra from the supplied dataframe
+    maps are created from previously filtered spectra windows
 
-    matplotlib.pyplot
-    matplotlib.widgets
-    matplotlib.path
-    matplotlib.ticker
+    prerequisites
+    -----
+        numpy
+        pandas
+        seaborn
 
-input
------
-''_df_filter'' is dataframe organised with:
-    - row 0 holding the names for each filter
-    - column 0 and 1 holding x and y information
-    - column 2-n holding the intensity values for each phase
-''_df_spectra'' is dataframe organised with:
-    - columns 0 and 1 holding x and y information
-    - columns 2: holding the spectral information 
-    - row 0 holding the raman shift values for each spectra sample point
-''location'' is the folder to export any saved spectra and related image files
+        matplotlib.pyplot
+        matplotlib.widgets
+        matplotlib.path
+        matplotlib.ticker
 
-output
------
-    the interactive map will show the a plot of the selected spectra points. Clicking ENTER when
-    this has loaded will automatically save the X and Y data into a .txt file as well as a image 
-    of the map as seen in it's current state. 
-        these files are saved as:
-            _spectra.txt, organised with:
-                - column 0; r-shift values
-                - column 1; spectral intensity values
-                - row 0; column names 
-            _spectra.png, an image of the hyperspectral map at the state when enter is pressed
+    input
+    -----
+    ''_df_filter'' is dataframe organised with:
+        - row 0 holding the names for each filter
+        - column 0 and 1 holding x and y information
+        - column 2-n holding the intensity values for each phase
+    ''_df_spectra'' is dataframe organised with:
+        - columns 0 and 1 holding x and y information
+        - columns 2: holding the spectral information 
+        - row 0 holding the raman shift values for each spectra sample point
+    ''location'' is the folder to export any saved spectra and related image files
 
-'''
+    output
+    -----
+        the interactive map will show the a plot of the selected spectra points. Clicking ENTER when
+        this has loaded will automatically save the X and Y data into a .txt file as well as a image 
+        of the map as seen in it's current state. 
+            these files are saved as:
+                _spectra.txt, organised with:
+                    - column 0; r-shift values
+                    - column 1; spectral intensity values
+                    - row 0; column names 
+                _spectra.png, an image of the hyperspectral map at the state when enter is pressed
 
-def interactive_map(_df_filter,_df_spectra,file):
+    '''
 
     import numpy as np
     import pandas as pd
