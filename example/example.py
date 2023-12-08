@@ -14,20 +14,18 @@ _df[0] = _df[0].sub(_df[0].min())
 _df[1] = _df[1].sub(_df[1].min())
 
 ''' --- background reduction --- '''
-from raman_hypmap import bgr_process
-_df_bgr = bgr_process(_df,file)
+from raman_hypmap import hyprocess
+_df_bgr = hyprocess.bgr_process(_df,file)
 _df_bgr = pd.read_csv(file+'_bgr.csv', sep=',', index_col=False,header=None)
 _df_raw = pd.read_csv(file+'_raw.csv', sep=',', index_col=False,header=None)
 
 ''' --- mineral filter --- '''
-from raman_hypmap import filter_window
-window_location = '_window_ranges.csv'
-filter_window(_df_bgr,file+'_bgr',window_location)
+window_location = 'example/_window_ranges.csv'
+hyprocess.filter_window(_df_bgr,file+'_bgr',window_location)
 
 ''' --- interactive hyperspectral map --- '''
-from raman_hypmap import hypmap_plot
 _df_filtered = pd.read_csv(file+'_bgr_w_filter.csv', sep=',', index_col=False)
-hypmap_plot(_df_filtered,_df_raw,file)
+hyprocess.hypmap_plot(_df_filtered,_df_raw,file)
 
 exit()
 
