@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "raman_hypmap"
-version = "0.0.5"
+version = "0.0.6"
 authors = [{ name="A Goodwin"},]
 
 description = "Raman hyperspectral processing for Horiba instrument"
