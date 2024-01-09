@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "raman_hypmap"
-version = "0.0.4"
+version = "0.0.5"
 authors = [{ name="A Goodwin"},]
 
 description = "Raman hyperspectral processing for Horiba instrument"
@@ -18,6 +18,6 @@ classifiers = [
 
 [project.urls]
 "Homepage" = "https://github.com/ag00dwin/raman_hypmap"
-"Bug Tracker" = "https://github.com/ag00dwin/raman_hypmap/issues"
+"Bug Tracker" = "https://https://github.com/ag00dwin/raman_hypmap/tree/main/.github/issues%20and%20feature%20request"
 
 

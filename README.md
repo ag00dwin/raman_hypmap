@@ -9,10 +9,7 @@ Three python modules are available:
 
 ## Referencing
 
-For use of this code, please cite: ???
-Doi and further information will be added upon publication 
-
-Please also reference Wang and Dai (2016) for the iterative polynomial smoothing method used for background reduction of spectra `bgr_process`. Reference: Wang, T. and Dai, L., 2017. Background subtraction of Raman spectra based on iterative polynomial smoothing. Applied spectroscopy, 71(6), pp.1169-1179. doi: https://doi.org/10.1177/0003702816670915.
+Please reference Wang and Dai (2016) for the iterative polynomial smoothing method used for background reduction of spectra `bgr_process`. Reference: Wang, T. and Dai, L., 2017. Background subtraction of Raman spectra based on iterative polynomial smoothing. Applied spectroscopy, 71(6), pp.1169-1179. doi: https://doi.org/10.1177/0003702816670915.
 
 The progress bar used in this code is from [user](https://stackoverflow.com/users/320726/6502) and full details are on [stackoverflow](https://stackoverflow.com/questions/6169217/replace-console-output-in-python)
 
@@ -24,7 +21,9 @@ The project is licensed under the GNU-v3 license.
 
 ## Installation
 
-To install the package, a `.toml` unified Python project settings file is provided. Download, navigate to the folder where the . `.toml` file is located and run `pip install`. Alternatively, the files can be imported as modules locally. Module are defined within `hyprocess.py`. 
+To install the package, a `.toml` and `.whl` are provided. Download, navigate to the folder where the . `.toml` or `.whl` file is located and run `pip install`. Alternatively, the files can be imported as modules locally. Module are defined within `hyprocess.py`. 
+
+This package is also available at https://pypi.org/project/raman-hypmap/
 
 ## Usage
 
