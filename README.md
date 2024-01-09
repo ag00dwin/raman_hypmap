@@ -9,6 +9,10 @@ Three python modules are available:
 
 ## Referencing
 
+[![DOI](https://zenodo.org/badge/662148161.svg)](https://zenodo.org/doi/10.5281/zenodo.10473516)
+
+If using this code, please reference the archive at [zenodo.org](https://doi.org/10.5281/zenodo.10473517)
+
 Please reference Wang and Dai (2016) for the iterative polynomial smoothing method used for background reduction of spectra `bgr_process`. Reference: Wang, T. and Dai, L., 2017. Background subtraction of Raman spectra based on iterative polynomial smoothing. Applied spectroscopy, 71(6), pp.1169-1179. doi: https://doi.org/10.1177/0003702816670915.
 
 The progress bar used in this code is from [user](https://stackoverflow.com/users/320726/6502) and full details are on [stackoverflow](https://stackoverflow.com/questions/6169217/replace-console-output-in-python)
